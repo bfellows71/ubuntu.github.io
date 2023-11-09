@@ -1,0 +1,354 @@
+/* The ubuntu font import statement */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+/* Ubuntu pallet taken from the ubuntu website.  */
+:root {
+    --ubuntu-orange: #E95420;
+    --ubuntu-dark-orange: #D13F16;
+    --ubuntu-light-orange: #F1703A;
+    --ubuntu-blue: #1E3799;
+    --ubuntu-dark-blue: #0E1E4F;
+    --ubuntu-light-blue: #284CB6;
+    --ubuntu-green: #4CAF50;
+    --ubuntu-dark-green: #2E7D32;
+    --ubuntu-light-green: #66BB6A;
+    --ubuntu-gray: #9E9E9E;
+    --ubuntu-dark-gray: #616161;
+    --ubuntu-light-gray: #CDCDCD;
+    --ubuntu-red: #D32F2F;
+    --ubuntu-yellow: #F0C22E;
+    --ubuntu-aubergine: #77216F;
+}
+
+body, h1, h2, ul, li, a {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(135deg, #77216F, #1E3799, #E95420, #1E3799, #4CAF50, #0E1E4F);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s linear infinite;
+}
+
+/* This is the animated background */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav {
+    background-color: #444;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+section {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Using the linear-gradient function, you can give it argument containing many different colors and it will produce
+ any variation of color you can think of */
+header {
+    text-align: center;
+    background: linear-gradient(135deg, #77216F, #1E3799, #E95420, #1E3799, #4CAF50, #0E1E4F);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s linear infinite;
+    padding: 20px;
+    font-size: 100px;
+}
+
+.ubuntu-header {
+    font-size: 150px;
+    color: #ffffff;
+    text-shadow: 5px 5px 0px #0E1E4F,
+    10px 10px 0px #616161;
+}
+
+.ubuntu-header:hover {
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+/* The sub-title is the lower part of the header in the intro */
+.ubuntu-subtitle {
+    font-size: 24px; /* Adjust font size for the subtitle */
+    color: #4CAF50; /* Ubuntu's orange for text */
+}
+
+/* This part of the stylesheet interacts with the letter set section */
+.letter-set {
+    width: 90%;
+    max-width: 1000px;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+    border: 2px solid #9E9E9E; /* Ubuntu's light gray */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    overflow: hidden;
+}
+
+.letter-icon {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.icon {
+    width: 100px;
+    height: 100px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    transition: background-color 0.2s;
+    animation: changeColors 35s infinite; /* where the magic happens boi */
+}
+
+.icon:hover {
+    background-color: #4CAF50;
+}
+
+.letter-set:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.letterset-header {
+    font-size: 150px;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 1000;
+    box-shadow: 0 0 20px rgba(30, 0, 255, 0.3);
+    margin: 20px auto;
+    display: inline-block;
+    text-shadow: 5px 5px 0px #E95420,
+    10px 10px 0px #D13F16,
+    15px 15px 0px #F1703A,
+    20px 20px 0px #1E3799,
+    25px 25px 0px #0E1E4F,
+    30px 30px 0px #c11a2b,
+    35px 35px 0px #4CAF50,
+    40px 40px 0px #9E9E9E,
+    45px 45px 0px #77216F;
+}
+
+
+.icon p ::before {
+    content: attr(data-title);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    color: #fff;
+    transition: .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: rotateY(25deg);
+}
+
+/* Sidebar styling */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 50px;
+    height: 100%;
+    padding: 5px;
+    border-right: 1px solid #E95420;
+    opacity: 1;
+    transition: opacity 5s;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    display: block;
+    transition: color 0.2s;
+}
+.sidebar.fade {
+    opacity: 0;
+}
+
+.sidebar a:hover {
+    color: #E95420; /* Ubuntu's orange for the hover effect */
+}
+
+/* Wordbank styling */
+#wordbank {
+    color: #fff;
+    padding: 30px;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    position: relative;
+}
+
+#wordbank h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.square-words {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.square-words p {
+    font-size: 40px;
+    white-space: nowrap;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    width: calc(33.33% - 20px);
+    font-weight: 700;
+    border: 2px solid #fff;
+    animation: revealLetters 4s ease-in-out;
+}
+
+/* This section of styling takes each word by utilizing the order of child (p(1)) first child in the paragraph etc...*/
+.square-words p:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.square-words p:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.square-words p:nth-child(3) {
+    animation-delay: 2s;
+}
+
+.square-words p:nth-child(4) {
+    animation-delay: 3s;
+}
+
+.square-words p:nth-child(5) {
+    animation-delay: 4s;
+}
+
+/* CSS for the Loren Ipsum section */
+#loren-ipsum {
+    color: #fff;
+    padding: 60px;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+#loren-ipsum h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+#loren-ipsum p {
+    font-size: 28px;
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+/* Styling for the ubuntu info section */
+#story-ubuntu {
+    color: #fff;
+    padding: 50px;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    display: flex;
+    justify-content: space-around;
+}
+
+.column {
+    flex: 1;
+    padding: 20px;
+    text-align: left;
+}
+
+.column h2 {
+    font-size: 36px; /* Increased font size */
+    margin-bottom: 20px;
+}
+
+.column p {
+    font-size: 35px; /* Increased font size */
+    margin: 10px 0;
+    line-height: 1.6;
+    animation: changeColors 25s infinite; /* Apply the color-changing animation */
+}
+
+/* Define the keyframes for the changing colors */
+@keyframes changeColors {
+    0% { color: #E95420; } /* Ubuntu's orange */
+    20% { color: #1E3799; } /* Ubuntu's blue */
+    40% { color: #4CAF50; } /* Ubuntu's green */
+    60% { color: #77216F; } /* Ubuntu's aubergine */
+    80% { color: #9E9E9E; } /* Ubuntu's gray */
+    100% { color: #E95420; } /* Back to orange */
+}
+
+#ubuntu-section {
+    color: var(--ubuntu-gray);
+    font-family: 'Ubuntu', sans-serif;
+    padding: 100px;
+    font-weight: 200;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
